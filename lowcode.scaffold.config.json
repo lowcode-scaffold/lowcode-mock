@@ -1,0 +1,13 @@
+{
+	"schema": {},
+	"excludeCompile": [
+		"./codeTemplate",
+		"./materials"
+	],
+	"conditionFiles": {
+		"name": {
+			"value": "1",
+			"exclude": []
+		}
+	}
+}
