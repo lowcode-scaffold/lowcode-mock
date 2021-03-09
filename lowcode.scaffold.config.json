@@ -1,8 +1,8 @@
 {
 	"schema": {},
 	"excludeCompile": [
-		"./codeTemplate",
-		"./materials"
+		"codeTemplate/",
+		"materials/"
 	],
 	"conditionFiles": {
 		"name": {
