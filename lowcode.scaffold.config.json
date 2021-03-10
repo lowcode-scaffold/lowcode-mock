@@ -23,8 +23,8 @@
 		"showDescIcon": true,
 		"labelWidth": 158,
 		"formData": {
-			"noREADME": true,
-			"emptyREADME": true
+			"noREADME": false,
+			"emptyREADME": false
 		}
 	},
 	"excludeCompile": [
