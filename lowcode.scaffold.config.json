@@ -1,14 +1,37 @@
 {
-	"formSchema": {},
+	"formSchema": {
+		"schema": {
+			"type": "object",
+			"properties": {
+				"noREADME": {
+					"title": "移除README文件",
+					"type": "boolean",
+					"ui:widget": "switch",
+					"ui:width": "100%",
+					"ui:labelWidth": 0
+				},
+				"emptyREADME": {
+					"title": "空README文件",
+					"type": "boolean",
+					"ui:widget": "switch"
+				}
+			},
+			"ui:displayType": "row",
+			"ui:showDescIcon": true
+		},
+		"displayType": "row",
+		"showDescIcon": true,
+		"labelWidth": 158,
+		"formData": {
+			"noREADME": true,
+			"emptyREADME": true
+		}
+	},
 	"excludeCompile": [
 		"codeTemplate/",
 		"materials/"
 	],
 	"conditionFiles": {
-		"name": {
-			"value": "1",
-			"exclude": []
-		},
 		"noREADME": {
 			"value": true,
 			"exclude": [
