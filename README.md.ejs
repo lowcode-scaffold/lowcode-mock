@@ -1,3 +1,4 @@
+<% if(emptyREADME !== true) { %>
 ---
 title: 文档
 ---
@@ -127,3 +128,4 @@ router.all(new RegExp('^/lowcode/mock/(|^$)'), proxy('https://github.com/wjkang/
 ```
 
 > 可用于 mock 现有接口新增字段
+<% } %>

@@ -8,6 +8,12 @@
 		"name": {
 			"value": "1",
 			"exclude": []
+		},
+		"noREADME": {
+			"value": true,
+			"exclude": [
+				"README.md.ejs"
+			]
 		}
 	}
 }
