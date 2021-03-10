@@ -19,7 +19,7 @@
 			"ui:displayType": "row",
 			"ui:showDescIcon": true
 		},
-		"displayType": "row",
+		"displayType": "column",
 		"showDescIcon": true,
 		"labelWidth": 158,
 		"formData": {
