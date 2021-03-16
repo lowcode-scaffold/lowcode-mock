@@ -8,12 +8,14 @@
 					"type": "boolean",
 					"ui:widget": "switch",
 					"ui:width": "100%",
-					"ui:labelWidth": 0
+					"ui:labelWidth": 0,
+					"ui:hidden": "{{rootValue.emptyREADME === true}}"
 				},
 				"emptyREADME": {
 					"title": "空README文件",
 					"type": "boolean",
-					"ui:widget": "switch"
+					"ui:widget": "switch",
+					"ui:hidden": "{{rootValue.noREADME === true}}"
 				}
 			},
 			"ui:displayType": "row",
@@ -27,16 +29,11 @@
 			"emptyREADME": false
 		}
 	},
-	"excludeCompile": [
-		"codeTemplate/",
-		"materials/"
-	],
+	"excludeCompile": ["codeTemplate/", "materials/"],
 	"conditionFiles": {
 		"noREADME": {
 			"value": true,
-			"exclude": [
-				"README.md.ejs"
-			]
+			"exclude": ["README.md.ejs"]
 		}
 	}
 }
