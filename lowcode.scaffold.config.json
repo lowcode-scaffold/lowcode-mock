@@ -14,7 +14,7 @@
 				"https": {
 					"title": "https",
 					"type": "boolean",
-					"widget": "switch"
+					"ui:widget": "switch"
 				},
 				"noREADME": {
 					"title": "移除README文件",
