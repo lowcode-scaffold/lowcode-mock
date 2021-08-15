@@ -2,14 +2,28 @@
 	"formSchema": {
 		"schema": {
 			"type": "object",
+			"ui:displayType": "row",
+			"ui:showDescIcon": true,
 			"properties": {
+				"port": {
+					"title": "监听端口",
+					"type": "string",
+					"props": {},
+					"default": "3000"
+				},
+				"https": {
+					"title": "https",
+					"type": "boolean",
+					"widget": "switch"
+				},
 				"noREADME": {
 					"title": "移除README文件",
 					"type": "boolean",
 					"ui:widget": "switch",
 					"ui:width": "100%",
 					"ui:labelWidth": 0,
-					"ui:hidden": "{{rootValue.emptyREADME === true}}"
+					"ui:hidden": "{{rootValue.emptyREADME === true}}",
+					"default": false
 				},
 				"emptyREADME": {
 					"title": "空README文件",
@@ -18,22 +32,20 @@
 					"ui:hidden": "{{rootValue.noREADME === true}}"
 				}
 			},
-			"ui:displayType": "row",
-			"ui:showDescIcon": true
-		},
-		"displayType": "column",
-		"showDescIcon": true,
-		"labelWidth": 158,
-		"formData": {
-			"noREADME": false,
-			"emptyREADME": false
+			"labelWidth": 120,
+			"displayType": "row"
 		}
 	},
-	"excludeCompile": ["codeTemplate/", "materials/"],
+	"excludeCompile": [
+		"codeTemplate/",
+		"materials/"
+	],
 	"conditionFiles": {
 		"noREADME": {
 			"value": true,
-			"exclude": ["README.md.ejs"]
+			"exclude": [
+				"README.md.ejs"
+			]
 		}
 	}
 }

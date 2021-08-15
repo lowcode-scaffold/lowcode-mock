@@ -6,6 +6,7 @@ import Routes from './routes/index'
 const https = require('https')
 const fs = require('fs')
 import proxy from './middleware/Proxy'
+import config from './config'
 
 const app = new Koa2()
 
@@ -37,23 +38,21 @@ Object.keys(Routes).forEach(function (key) {
 })
 
 const router = new KoaRouter()
-router.all(new RegExp('^/lowcode/mock/(|^$)'), proxy('https://github.com/wjkang/lowcode-mock'))
+router.all(new RegExp('^/lowcode-mock(|^$)'), proxy('https://github.com/wjkang'))
 app.use(router.routes()).use(router.allowedMethods())
 
-const options = {
-	key: fs.readFileSync('./src/ca-key.pem'),
-	cert: fs.readFileSync('./src/ca-cert.pem'),
+if (config.https) {
+	const options = {
+		key: fs.readFileSync('./src/ca-key.pem'),
+		cert: fs.readFileSync('./src/ca-cert.pem'),
+	}
+	https.createServer(options, app.callback()).listen(config.port, () => {
+		console.log(`start https mock server on port  ${config.port} ...`)
+	})
+} else {
+	app.listen(config.port, () => {
+		console.log(`start mock server on port  ${config.port} ...`)
+	})
 }
-// https
-// 	.createServer(options, app.callback())
-// 	.listen(SystemConfig.API_SERVER_PORT, () => {
-// 		console.log(
-// 			'Now start API server on port ' +
-// 				SystemConfig.API_SERVER_PORT +
-// 				'...'
-// 		)
-// 	})
-app.listen(3000)
-console.log('start mock server on port ' + 3000 + '...')
 
 export default app

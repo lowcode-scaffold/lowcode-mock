@@ -33,7 +33,7 @@ router
 		const result = await request(ctx, 'http://localhost:3000/mock')
 		const interceptResult = {
 			...result.body,
-			intercept: '拦截相应',
+			intercept: '拦截响应',
 		}
 		ctx.body = interceptResult
 	})
