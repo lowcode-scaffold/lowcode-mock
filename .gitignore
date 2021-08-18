@@ -9,3 +9,4 @@ selenium-debug.log
 codeGenerate/dist/
 *.lock
 package.json
+/src/config.js
