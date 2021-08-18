@@ -1,51 +1,56 @@
 {
-	"formSchema": {
-		"schema": {
-			"type": "object",
-			"ui:displayType": "row",
-			"ui:showDescIcon": true,
-			"properties": {
-				"port": {
-					"title": "监听端口",
-					"type": "string",
-					"props": {},
-					"default": "3000"
-				},
-				"https": {
-					"title": "https",
-					"type": "boolean",
-					"ui:widget": "switch"
-				},
-				"noREADME": {
-					"title": "移除README文件",
-					"type": "boolean",
-					"ui:widget": "switch",
-					"ui:width": "100%",
-					"ui:labelWidth": 0,
-					"ui:hidden": "{{rootValue.emptyREADME === true}}",
-					"default": false
-				},
-				"emptyREADME": {
-					"title": "空README文件",
-					"type": "boolean",
-					"ui:widget": "switch",
-					"ui:hidden": "{{rootValue.noREADME === true}}"
-				}
-			},
-			"labelWidth": 120,
-			"displayType": "row"
-		}
-	},
-	"excludeCompile": [
-		"codeTemplate/",
-		"materials/"
-	],
-	"conditionFiles": {
-		"noREADME": {
-			"value": true,
-			"exclude": [
-				"README.md.ejs"
-			]
-		}
-	}
+  "formSchema": {
+    "schema": {
+      "type": "object",
+      "ui:displayType": "row",
+      "ui:showDescIcon": true,
+      "properties": {
+        "port": {
+          "title": "监听端口",
+          "type": "string",
+          "props": {},
+          "default": "3000"
+        },
+        "https": {
+          "title": "https",
+          "type": "boolean",
+          "ui:widget": "switch"
+        },
+        "lint": {
+          "title": "eslint + prettier",
+          "type": "boolean",
+          "ui:widget": "switch",
+          "default": true
+        },
+        "noREADME": {
+          "title": "移除README文件",
+          "type": "boolean",
+          "ui:widget": "switch",
+          "ui:width": "100%",
+          "ui:labelWidth": 0,
+          "ui:hidden": "{{rootValue.emptyREADME === true}}",
+          "default": false
+        },
+        "emptyREADME": {
+          "title": "空README文件",
+          "type": "boolean",
+          "ui:widget": "switch",
+          "ui:hidden": "{{rootValue.noREADME === true}}"
+        }
+      },
+      "labelWidth": 120,
+      "displayType": "row"
+    }
+  },
+  "excludeCompile": ["codeTemplate/", "materials/"],
+  "conditionFiles": {
+    "noREADME": {
+      "value": true,
+      "exclude": ["README.md.ejs"]
+    },
+    "lint": {
+      "value": false,
+      "exclude": [".eslintrc.js", ".prettierrc.js"]
+    }
+  }
 }
