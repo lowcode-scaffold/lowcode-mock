@@ -39,10 +39,10 @@
         }
       },
       "labelWidth": 120,
-      "displayType": "row",
-      "formData": {
-        "lint": true
-      }
+      "displayType": "row"
+    },
+    "formData": {
+      "lint": true
     }
   },
   "excludeCompile": ["codeTemplate/", "materials/"],
