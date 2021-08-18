@@ -19,8 +19,7 @@
         "lint": {
           "title": "eslint + prettier",
           "type": "boolean",
-          "ui:widget": "switch",
-          "default": true
+          "ui:widget": "switch"
         },
         "noREADME": {
           "title": "移除README文件",
