@@ -42,7 +42,11 @@
       "displayType": "row"
     },
     "formData": {
-      "lint": true
+      "port": 3000,
+      "https": false,
+      "lint": true,
+      "noREADME": false,
+      "emptyREADME": false
     }
   },
   "excludeCompile": ["codeTemplate/", "materials/"],
