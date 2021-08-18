@@ -19,7 +19,8 @@
         "lint": {
           "title": "eslint + prettier",
           "type": "boolean",
-          "ui:widget": "switch"
+          "ui:widget": "switch",
+          "default": true
         },
         "noREADME": {
           "title": "移除README文件",
@@ -38,7 +39,10 @@
         }
       },
       "labelWidth": 120,
-      "displayType": "row"
+      "displayType": "row",
+      "formData": {
+        "lint": true
+      }
     }
   },
   "excludeCompile": ["codeTemplate/", "materials/"],
