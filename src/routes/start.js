@@ -42,6 +42,13 @@ router
   .get('/proxy', proxy('https://github.com/wjkang/lowcode-mock'), (ctx) => {
     ctx.body = 'https://github.com/wjkang/lowcode-mock';
   })
+  .get(`/mockProjectPath`, async (ctx, next) => {
+    ctx.body = {
+      status: 200,
+      msg: '',
+      result: __dirname,
+    };
+  })
   .all(
     new RegExp('^/lowcode/mock/(|^$)'),
     proxy('https://github.com/wjkang/lowcode-mock'),
